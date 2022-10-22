@@ -28,9 +28,30 @@ def get_number():
 tests = get_number()
 
 for t in range(tests):
+    # Create array with dimensions
     n = get_number()
     m = get_number()
     d = get_number()
 
-    array = np.empty([n, m, d], dtype=np.int32)
-    print(array)
+    array = np.empty(shape=[n, m, d], dtype='S1')
+
+    # Populate array
+    for i in range(n):
+        for j in range(m):
+            word = get_word()
+            for k in range(d):
+                array[i, j, k] = word[k]
+
+    # Print array
+    # print(array)
+
+    # Count
+    inputs = np.count_nonzero(array[0,:,:] == b'o')
+    outputs = np.count_nonzero(array[d-1,:,:] == b'o')
+    pipes = np.count_nonzero(array == b'*')
+
+    print(inputs, outputs, pipes)
+
+    internal_connections = (inputs + outputs + pipes * 3) - inputs - outputs
+    print('YES' if internal_connections % 2 == 0 else 'NO')
+    
