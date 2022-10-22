@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "my-treat": "cd js && type my-treat.txt | node my-treat.js > out.txt",
+    "ascii-dancer": "cd js && type ascii-dancer.txt | node ascii-dancer.js > out.txt",
+    "andman": "cd js && type andman.txt | node andman.js > out.txt",
+    "pizza-cutter": "cd py && type pizza-cutter.txt | py pizza-cutter.py > out.txt",
+    "pipeline": "cd py && type pipeline.txt | py pipeline.py > out.txt",
+    "gauis": "cd py && type gauis.txt | py gauis.py > out.txt"
   },
   "keywords": [],
   "author": "",
