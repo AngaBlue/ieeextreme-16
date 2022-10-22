@@ -1,3 +1,5 @@
+# 100% Completed
+
 from typing import Set
 
 # Boilerplate parsing
@@ -26,16 +28,16 @@ def get_number():
 
 # Get number of tests and loop
 tests = get_number()
-print('Tests: ', tests)
 for test in range(tests):
     # Sets won't allow duplicates
-    values: Set[int] = set()
+    angles: Set[int] = set()
 
     # Get number of values in test case
     test_length = get_number()
-    for test in range(tests):
+    for test in range(test_length):
         angle = get_number()
-        values.append(angle % 180 + 180)
+        angles.add((angle % 180 + 180) % 180)
 
     # Number of slices = number of unique angles * 2
-    print(len(values) * 2)
+    slices = len(angles) * 2
+    print(slices if slices else 1)
