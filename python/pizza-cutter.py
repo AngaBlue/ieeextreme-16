@@ -29,7 +29,7 @@ tests = get_number()
 print('Tests: ', tests)
 for test in range(tests):
     # Sets won't allow duplicates
-    values: Set[int] = {}
+    values: Set[int] = set()
 
     # Get number of values in test case
     test_length = get_number()
