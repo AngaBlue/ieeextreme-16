@@ -1,4 +1,6 @@
 # Boilerplate parsing
+from math import factorial
+
 def parser():
     while 1:
         try:
@@ -22,5 +24,10 @@ def get_number():
     except ValueError:
         return float(data)
 
-N = get_number()
-M = get_number()
+N = 4
+M = 2
+
+combinations = N >> M
+normalised = combinations % 998244353998244353
+
+print(int(normalised))
